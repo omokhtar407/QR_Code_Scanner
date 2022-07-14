@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ----------------------------------- Start My Meta ----------------------------------- -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="El Mokhtar" />
+    <meta name="description" content="My Portfolio" />
+    <meta name="keywords" content="html,css,js" />
+    <!-- ----------------------------------- End My Meta ----------------------------------- -->
+    
+    <title>QR Code Scanner or Reader</title>
+
+    <!-- ----------------------------------- Start My Links ----------------------------------- -->
+    <link rel="icon" href="imgs/favicon.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cairo&family=Kaushan+Script&family=Patrick+Hand&family=Readex+Pro&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Main Css File -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- ----------------------------------- End My Links ----------------------------------- -->
+</head>
+<body >
+    <!-- ----------------------------------- Start Loading ----------------------------------- -->
+        <div class="loading">
+            <div class="my-logo">
+                <div class="content">
+                    <img src="imgs/favicon.png" alt="Eagle_logo">
+                </div>
+            </div>
+        </div>
+    <!-- ----------------------------------- End Loading ----------------------------------- -->
+
+    <!-- ----------------------------------- Start QR Code ----------------------------------- -->
+        <div class="wrapper">
+            <form action="#">
+                <input type="file" hidden>
+                <img src="" alt="qr-code">
+                <div class="content">
+                    <i class="fas fa-cloud-upload"></i>
+                    <p>Upload QR Code to Scan</p>
+                </div>
+            </form>
+            <div class="details">
+                <textarea spellcheck="false" disabled></textarea>
+                <div class="buttons">
+                    <button class="close">Close</button>
+                    <button class="copy">Copy Text</button>
+                </div>
+            </div>
+        </div>  
+    <!-- ----------------------------------- End QR Code ----------------------------------- -->
+
+    <!-- ----------------------------------- Start Scripts ----------------------------------- -->
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js" ></script>
+        <script src="js/main.js"></script>
+    <!-- ----------------------------------- End Scripts ----------------------------------- -->
+
+</body>
+</html>

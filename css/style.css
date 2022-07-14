@@ -1,0 +1,222 @@
+:root {
+  --main_color: #f15824;
+  --secondary_color:#f67f1d;
+  --white_color: #fff;
+  --black_color: #000;
+  --black_50_color:#0d0c0c;
+  --font_family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font_family_sec:'Kaushan Script', cursive;
+}
+
+/********************** For Loading /***********************/
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--black_color);
+  z-index: 999999999999999;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+}
+.my-logo, 
+.my-img{
+  position: relative;
+  width: 170px;
+  height: 170px;
+  background-color: var(--secondary_color);
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+@media (min-width:576px) {
+  .my-img{
+    width: 400px;
+    height: 400px;
+  }
+}
+.my-logo::before, 
+.my-img::before{
+  position: absolute;
+  content: "";
+  inset: -10px 70px;
+  background:linear-gradient(315deg , #fa003f,#ff1100);
+  transition: 0.5s ;
+  animation: animate 1s linear infinite;
+}
+.my-logo:hover::before,
+.my-img:hover::before{
+  inset: -20px 0px;
+}
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.my-logo::after, .my-img::after{
+  content: "";
+  position: absolute;
+  inset: 6px;
+  background: var(--black_color);
+  border-radius: 50%;
+  z-index: 1;
+}
+.my-logo .content,
+.my-img .content{
+  position: absolute;
+  inset: 20px;
+  border: 6px solid var(--secondary_color);
+  z-index: 3;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.my-img .content{
+  inset: 30px;
+}
+.my-logo .content img,
+.my-img .content img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+/*********************** End For Loading ********************/
+
+/*********************** Start QR Code Reader or Scanner ********************/
+  body{
+    display: flex;
+    padding: 0 10px;
+    min-height: 100vh;
+    align-items: center;
+    background: var(--main_color);
+    justify-content: center;
+    font-family: var(--font_family);
+  }
+  .wrapper{
+    height: 270px;
+    width: 420px;
+    border-radius: 7px;
+    background: var(--secondary_color);
+    padding: 30px 30px 35px;
+    transition: height 0.2s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  .wrapper.active{
+    height: 525px;
+  }
+  .wrapper form{
+    height: 210px;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    border-radius: 7px;
+    background: var(--white_color);
+    align-items: center;
+    justify-content: center;
+    transition: height 0.2s ease;
+  }
+  .wrapper.active form{
+    height: 225px;
+    pointer-events: none;
+  }
+  form img{
+    display: none;
+    max-width: 148px;
+  }
+  .wrapper.active form img{
+    display: block;
+  }
+  .wrapper.active form .content{
+    display: none;
+  }
+  form .content i{
+    color: var(--secondary_color);
+    font-size: 55px;
+  }
+  form .content p{
+    color: var(--secondary_color);
+    margin-top: 15px;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .wrapper .details{
+    opacity: 0;
+    margin-top: 25px;
+    pointer-events: none;
+  }
+  .wrapper.active .details{
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s 0.05s ease;
+  }
+  .details textarea{
+    width: 100%;
+    height: 128px;
+    outline: none;
+    resize: none;
+    color: var(--white_color);
+    font-size: 18px;
+    background: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: 1px solid var(--white_color);
+  }
+  textarea::-webkit-scrollbar{
+    width: 0px;
+  }
+  textarea:hover::-webkit-scrollbar{
+    width: 5px;
+  }
+  textarea:hover::-webkit-scrollbar-track{
+    background: none;
+  }
+  textarea:hover::-webkit-scrollbar-thumb{
+    background: var(--white_color);
+    border-radius: 8px;
+  }
+  .details .buttons{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .buttons button{
+    height: 55px;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--secondary_color);
+    border-radius: 5px;
+    background: var(--white_color);
+    transition: transform 0.3s ease;
+    width: calc(100% / 2 - 10px);
+  }
+  .buttons button:active{
+    transform: scale(0.95);
+  }
+  @media (max-width: 450px) {
+    .wrapper{
+      padding: 25px;
+      height: 260px;
+    }
+    .wrapper.active{
+      height: 520px;
+    }
+  }
+
+/*********************** End QR Code Reader or Scanner ********************/
